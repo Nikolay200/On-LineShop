@@ -1,0 +1,28 @@
+﻿@model Register
+<form method="post">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+    <div class="row">
+        <div class="col-4">
+            <ul>
+                <li style="list-style-type:none">
+                    <h2>Вход</h2>
+                    <br />
+                    <input asp-for="UserName" type="text" class="form-control" placeholder="Логин" />
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                    <br />
+                    <input asp-for="Phone" type="text" class="form-control" placeholder="Телефон" />
+                    <span class="text-danger" asp-validation-for="Phone"></span>
+                    <br />
+                    <input asp-for="Password" type="text" class="form-control" placeholder="Пароль" />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                    <br />
+                    <input asp-for="ConfirmPassword" type="text" class="form-control" placeholder="Подтвердите пароль" />
+                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                    <br />
+                    <button class="btn btn-success" type="submit" asp-area="Account" asp-controller="Account" asp-action="Register">Зарегистрироваться</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</form>
